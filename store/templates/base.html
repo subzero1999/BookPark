@@ -15,43 +15,17 @@
 main {
   flex: 1 0 auto;
 }
+
+.page-footer{
+  height:150px
+}
 </style>
 </head>
 <body>
-  <!--
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="{% url 'index' %}" class="navbar-brand">BookStore</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="#about">About</a></li>
-                {% if request.user.is_authenticated %}
-                <li><a href="{% url 'cart' %}">Cart</a></li>
-                {% endif %}
-            </ul>
-            <div class="navbar-form pull-right">
-                {% if request.user.is_authenticated %} Welcome,  {{ request.user.username }}
-                <!--auth_logout is found in Documents/bookstore-django/Lib/site-packages/registration/auth_url
-                {% endif %}! <a class="link_text" href="{% url 'auth_logout' %}">Log Out</a>
-                <!--auth_logout is found in Documents/bookstore-django/Lib/site-packages/registration/auth_urls
-                Welcome!<a class="link_text" href="{% url 'auth_login' %}"> Log In</a> or <a class="link_text" href="{% url 'registration_register' %}">Register</a>
-            </div>
-        </div>
-    </div>
-</nav>
--->
+
 <nav>
   <div class="nav-wrapper">
-    <a href="#" class="brand-logo left">BookPark</a>
+    <a href="{% url 'home' %}" class="brand-logo left">BookPark</a>
     <ul id="nav-mobile" class="right hide-on-small-only">
       <li><a href="#">{% if request.user.is_authenticated %} Welcome,  {{ request.user.username }} {% endif %}</a></li>
       <li><a href="{% url 'index' %}">Store</a>
@@ -68,6 +42,7 @@ main {
     </ul>
   </div>
 </nav>
+<main>
 {% block body %}
 <section class="cover">
     <div class="container-fluid content-main">
@@ -96,25 +71,19 @@ main {
     </div>
 </section>
 {% endblock %}
+</main>
 <footer class="page-footer">
        <div class="container">
          <div class="row">
-           <div class="col l6 s12">
-             <h5 class="white-text">Footer Content</h5>
+
              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-           </div>
-           <div class="col l4 offset-l2 s12">
-             <h5 class="white-text">Links</h5>
-             <ul>
-               <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-               </ul>
-           </div>
+           
+
          </div>
        </div>
        <div class="footer-copyright">
          <div class="container">
          © 2017 Copyright Text
-         <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
          </div>
        </div>
      </footer>
